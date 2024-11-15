@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
-const api_key = import.meta.env.VITE_SOME_KEY
-// variable api_key now has the value set in startup
+require('dotenv').config()
 
 const App = () => { 
   const [value, setValue] = useState('')
@@ -77,7 +76,7 @@ const App = () => {
         // })
 
         axios
-        .get(`http://api.weatherstack.com/current?access_key=${api_key}&query=${displayCountry.capital}`)
+        .get(`http://api.weatherstack.com/current?access_key=${process.env.API_KEY}&query=${displayCountry.capital}`)
         .then(response => {
           console.log(response.data)
           const temp = response.data.current.temperature
