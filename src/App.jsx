@@ -76,7 +76,7 @@ const App = () => {
         // })
 
         axios
-        .get(`http://api.weatherstack.com/current?access_key=${import.meta.env.VITE_API_KEY}&query=${displayCountry.capital}`)
+        .get(`http://api.weatherstack.com/current?access_key=${process.env.API_KEY}&query=${displayCountry.capital}`)
         .then(response => {
           console.log(response.data)
           const temp = response.data.current.temperature
