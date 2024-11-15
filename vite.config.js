@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   define: {
-    'process.env.SOME_ENV': `"${import.meta.env.SOME_ENV}"`
+    'process.env.VITE_API_KEY': `"${import.meta.env.VITE_API_KEY}"`
   }
 })
