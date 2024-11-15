@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
-import { config } from 'dotenv'
-config()
 
 const App = () => { 
   const [value, setValue] = useState('')
