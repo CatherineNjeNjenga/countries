@@ -47,7 +47,7 @@ const App = () => {
       if (countries.length === 1) {
         const focusCountry = countries[0]
         console.log(focusCountry)
-
+        https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/nairobi?unitGroup=metric&include=current&key=VZNKRU92PELK6US4JYV39463N&contentType=json
         axios
           .get(`https://studies.cs.helsinki.fi/restcountries/api/name/${focusCountry}`)
           .then(response => {
@@ -74,23 +74,39 @@ const App = () => {
         //   console.log(error)
         // })
 
+        // axios
+        // .get(`http://api.weatherstack.com/current?access_key=${import.meta.env.VITE_API_KEY}&query=${displayCountry.capital}`)
+        // .then(response => {
+        //   console.log(response.data)
+        //   const temp = response.data.current.temperature
+        //   setTemperature(temp)
+        //   console.log(temp)
+        //   const wind = response.data.current.wind_speed
+        //   console.log(wind)
+        //   setWindSpeed(wind)
+        //   const icon = response.data.current.weather_icons
+        //   setWeatherIcon(icon)
+        // })
+        // .catch(error => {
+        //   console.log(error)
+        // })
+
         axios
-        .get(`http://api.weatherstack.com/current?access_key=${import.meta.env.VITE_API_KEY}&query=${displayCountry.capital}`)
+        .get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${displayCountry.capital}?unitGroup=metric&include=current&key=${import.meta.env.VITE_API_KEY}&contentType=json`)
         .then(response => {
           console.log(response.data)
-          const temp = response.data.current.temperature
+          const temp = response.data.currentConditions.temp
           setTemperature(temp)
           console.log(temp)
-          const wind = response.data.current.wind_speed
+          const wind = response.data.currentConditions.windspeed
           console.log(wind)
           setWindSpeed(wind)
-          const icon = response.data.current.weather_icons
+          const icon = response.data.currentConditions.icon
           setWeatherIcon(icon)
         })
         .catch(error => {
           console.log(error)
         })
-
 
         // axios
         // .get(`https://api.openweathermap.org/data/3.0/onecall?lat=${displayCountry.capitalInfo.latlng[0]}&lon=${displayCountry.capitalInfo.latlng[1]}&exclude={part}&appid=${api_key}`)
@@ -173,7 +189,8 @@ const App = () => {
           <img src={displayCountry.flags.png} />
           <h3>Weather in {displayCountry.capital}</h3>
           <p>temperature {temperature} Celcius</p>
-          <img src={weatherIcon} />
+          <p>{weatherIcon}</p>
+          {/* <img src={weatherIcon} /> */}
           <p>wind {windSpeed} m/s</p>
         </>
        }
