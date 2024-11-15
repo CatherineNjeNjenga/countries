@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
-import { defineConfig } from 'vite'
 import { config } from 'dotenv'
 config()
 
