@@ -9,7 +9,6 @@ A countries web application where you can search for a target country and view a
 Live demo: https://countrycard.onrender.com/
 
 ![Search functionality](src/assets/search.png)
-[Weather Data](src/assets/weather.png)
 
 ## Features
 
