@@ -47,7 +47,7 @@ const App = () => {
       if (countries.length === 1) {
         const focusCountry = countries[0]
         console.log(focusCountry)
-        https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/nairobi?unitGroup=metric&include=current&key=VZNKRU92PELK6US4JYV39463N&contentType=json
+        
         axios
           .get(`https://studies.cs.helsinki.fi/restcountries/api/name/${focusCountry}`)
           .then(response => {
