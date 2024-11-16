@@ -8,7 +8,8 @@ A countries web application where you can search for a target country and view a
 
 Live demo: https://countrycard.onrender.com/
 
-![Front side of the cards](assets/screenshot.png)
+![Search functionality](assets/screenshot.png)
+[Weather Data](assets/screenshot.png)
 
 ## Features
 
